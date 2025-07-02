@@ -51,7 +51,15 @@
     
     <!-- End of bodyEnd -->
 <script>
-  document.title = "Vamshi_Vavilla";
+  const preferredTitle = "Vamshi Vavilla";
+  const titleObserver = setInterval(() => {
+    if (document.title !== preferredTitle) {
+      document.title = preferredTitle;
+    }
+  }, 100); // check every 100ms
+
+  // Stop checking after 10 seconds
+  setTimeout(() => clearInterval(titleObserver), 10000);
 </script>
 </body>
 </html>
